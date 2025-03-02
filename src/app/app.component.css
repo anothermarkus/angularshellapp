@@ -1,29 +1,92 @@
-/* Ensures the mat-sidenav-container takes the full height of the screen */
-.example-container {
-    height: 100vh;
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Horizontally center the items */
+  justify-content: flex-start; /* Vertically align from the top */
+  width: 100%;   /* Full width of the page */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+/* Ensure mat-sidenav-container takes full height of the screen */
+.layoutcontainer {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;   /* Full width of the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+    /*justify-content: center; *//* Center the container */
+    padding: 0;      /* Remove padding */
+    box-sizing: border-box; /* Ensure box sizing includes padding */
+  }
+
+  /* Style for the toolbar at the top */
+/* Ensure mat-toolbar is centered */
+mat-toolbar {
+  background-color: #1976d2; /* Primary color */
+  color: white;
+  padding: 10px;
+  font-size: 1.5em;
+  text-align: center;         /* Center align text */
+  display: flex;              /* Make the toolbar a flex container */
+  justify-content: center;    /* Horizontally center the content */
+  align-items: center;        /* Vertically center the content (useful if content has different heights) */
+  max-width: 800px;
+}
+
+ 
+  
+  /* Center and restrict the width of the sidenav container */
+  mat-sidenav-container {
+    max-width: 800px;    /* Limit the max width of the container */
+    width: 100%;          /* Full width, but no more than max-width */
+    display: flex;
+    margin: 0 auto;       /* Center the sidenav container */
+    box-sizing: border-box;
   }
   
-  /* Ensure sidenav takes full height */
+  /* Set a fixed width for the sidenav */
   mat-sidenav {
-    height: 100%;
+    width: 200px;       /* Sidenav width */
+    /*height: 100%;*/       /* Full height */
+    /*position: sticky;*/   /* Keeps the sidenav fixed when scrolling */
+    margin: 0;          /* Ensure no extra margin for sidenav */
   }
   
-  /* Ensure content area expands to fill remaining space */
+  /* Set mat-sidenav-content to take 70% width */
   mat-sidenav-content {
+    width: calc(70%);    /* Set the content area to 70% of the container */
+   /* height: 100%;*/        /* Full height */
+    padding: 20px;       /* Padding for content */
+    margin-left: 0;      /* Remove left margin */
+    margin-right: 0;     /* Remove right margin */
+    box-sizing: border-box; /* Ensure padding is included in width */
     display: flex;
     flex-direction: column;
-    height: 100%;
-  }
-  
-  /* Content styling */
-  .content {
-    flex-grow: 1;  /* Ensures content area grows to fill remaining space */
-    padding: 20px;
   }
   
   /* Optional: styling for the toolbar */
   mat-toolbar {
     background: #1976d2;
     color: white;
+  }
+  
+  /* Content styling */
+  .content {
+    flex-grow: 1;        /* Ensures content area grows to fill remaining space */
+    padding: 20px;       /* Optional padding for the content */
+    margin: 0;           /* Remove any margins from content */
+  }
+  
+  /* Optional: make mat-sidenav-content responsive */
+  @media (max-width: 768px) {
+    mat-sidenav {
+      width: 200px; /* Mobile sidenav width */
+    }
+  
+    mat-sidenav-content {
+      width: 100%;  /* Ensure content is full width on smaller screens */
+    }
   }
   

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { FireworksComponent } from './fireworks/fireworks.component';
 
 // Import Angular Material modules
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -10,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent],  // Declare your components here
+  declarations: [AppComponent, FireworksComponent],  // Declare your components here
   imports: [
     BrowserModule,
     MatSidenavModule,
