@@ -1,0 +1,29 @@
+/* Ensures the mat-sidenav-container takes the full height of the screen */
+.example-container {
+    height: 100vh;
+  }
+  
+  /* Ensure sidenav takes full height */
+  mat-sidenav {
+    height: 100%;
+  }
+  
+  /* Ensure content area expands to fill remaining space */
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Content styling */
+  .content {
+    flex-grow: 1;  /* Ensures content area grows to fill remaining space */
+    padding: 20px;
+  }
+  
+  /* Optional: styling for the toolbar */
+  mat-toolbar {
+    background: #1976d2;
+    color: white;
+  }
+  
